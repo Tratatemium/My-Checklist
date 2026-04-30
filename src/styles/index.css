@@ -1,38 +1,15 @@
 :root {
 
-  font: 18px/145% var(--sans);
+  font: var(--font-size-md)/145% var(--sans, "Segoe UI", sans-serif);
   letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
+
+  color: var(--color-foreground-primary);
+  background: var(--color-surface-primary);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
 }
 
 #root {
@@ -40,7 +17,7 @@
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
-  border-inline: 1px solid var(--border);
+  border-inline: var(--border-neutral);
   min-height: 100svh;
   display: flex;
   flex-direction: column;
@@ -53,9 +30,9 @@ body {
 
 h1,
 h2 {
-  font-family: var(--heading);
+  font-family: var(--heading, "Segoe UI", sans-serif);
   font-weight: 500;
-  color: var(--text-h);
+  color: var(--color-foreground-primary);
 }
 
 h1 {
@@ -81,16 +58,16 @@ p {
 }
 
 code,
-.counter {
-  font-family: var(--mono);
+code {
+  font-family: var(--mono, "Consolas", "Courier New", monospace);
   display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+  border-radius: calc(var(--spacing-sm) / 2);
+  color: var(--color-foreground-primary);
 }
 
 code {
   font-size: 15px;
   line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+  padding: calc(var(--spacing-sm) / 2) var(--spacing-sm);
+  background: var(--color-surface-neutral);
 }
