@@ -1,13 +1,13 @@
 import styles from "./Button.module.css";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children?: React.ReactNode;
   variant: "default" | "neutral" | "subtle";
-  text: string;
 }
 
 function Button({
+  children,
   variant,
-  text,
   type = "button",
   className,
   ...props
@@ -18,7 +18,7 @@ function Button({
       type={type}
       {...props}
     >
-      {text}
+      {children}
     </button>
   );
 }
