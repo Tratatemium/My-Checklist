@@ -1,5 +1,4 @@
 :root {
-
   font: var(--font-size-md)/145% var(--sans, "Segoe UI", sans-serif);
   letter-spacing: 0.18px;
 
@@ -9,7 +8,6 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 
 #root {
