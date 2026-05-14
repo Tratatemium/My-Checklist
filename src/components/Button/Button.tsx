@@ -1,6 +1,6 @@
 import styles from "./Button.module.css";
 
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant: "default" | "neutral" | "subtle";
   text: string;
 }
