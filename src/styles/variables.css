@@ -15,7 +15,11 @@
   --border-neutral: 1px solid #767676;
   --border-focus: 2px solid #94a3b8;
 
-  --font-sixe-sm: 14px;
+  --font-sans: "Inter", "Segoe UI", sans-serif;
+  --font-heading: "Inter", "Segoe UI", sans-serif;
+  --font-mono: "Consolas", "Courier New", monospace;
+
+  --font-size-sm: 14px;
   --font-size-md: 16px;
 
   --spacing-sm: 8px;
