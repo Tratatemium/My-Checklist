@@ -2,7 +2,7 @@
     height: 32px;
     padding: var(--spacing-sm);
     border-radius: var(--spacing-sm);
-    font-size: var(--body-md);
+    font-size: var(--font-size-md);
     border: 1px solid;
 }
 
