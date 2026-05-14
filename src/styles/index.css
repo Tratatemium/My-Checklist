@@ -1,6 +1,5 @@
 :root {
-
-  font: var(--font-size-md)/145% var(--sans, "Segoe UI", sans-serif);
+  font: var(--font-size-md)/145% var(--font-sans);
   letter-spacing: 0.18px;
 
   color: var(--color-foreground-primary);
@@ -9,7 +8,6 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 
 #root {
@@ -30,7 +28,7 @@ body {
 
 h1,
 h2 {
-  font-family: var(--heading, "Segoe UI", sans-serif);
+  font-family: var(--font-heading);
   font-weight: 500;
   color: var(--color-foreground-primary);
 }
@@ -59,7 +57,7 @@ p {
 
 code,
 code {
-  font-family: var(--mono, "Consolas", "Courier New", monospace);
+  font-family: var(--font-mono);
   display: inline-flex;
   border-radius: calc(var(--spacing-sm) / 2);
   color: var(--color-foreground-primary);
