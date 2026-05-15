@@ -16,8 +16,7 @@ function ListItem() {
     setIsEditing(true);
   }
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
+  function handleSave() {
     setValue(draft);
     setIsEditing(false);
   }
@@ -28,13 +27,14 @@ function ListItem() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className={styles.form}>
+    <form className={styles.form}>
       <div className={styles.taskWrapper}>
         <Checkbox />
         {!isEditing ? (
-          <p>{value}</p>
+          <p>{value || "Untitled task"}</p>
         ) : (
           <InputField
+            autoFocus
             value={draft}
             onChange={(e) => setDraft(e.target.value)}
           />
@@ -52,7 +52,12 @@ function ListItem() {
           </>
         ) : (
           <>
-            <Button variant="default" type="submit">
+            <Button
+              variant="default"
+              type="button"
+              onClick={handleSave}
+              disabled={!draft.trim()}
+            >
               Save
             </Button>
             <Button variant="subtle" type="button" onClick={cancelEditing}>
