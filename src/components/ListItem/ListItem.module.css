@@ -1,0 +1,22 @@
+.form {
+  display: flex;
+  flex-direction: row;
+  width: 360px;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-xs);
+  gap: var(--spacing-sm);
+}
+
+.taskWrapper,
+.buttonsWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+.taskWrapper {
+  gap: var(--spacing-md);
+}
