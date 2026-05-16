@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useMemo } from "react";
 
 interface Task {
   id: string;
@@ -46,13 +46,16 @@ function TasksProvider({ children }: { children: React.ReactNode }) {
     );
   }
 
-  const value: TasksContextType = {
-    tasks,
-    addTask,
-    deleteTask,
-    editTask,
-    toggleTask,
-  };
+  const value = useMemo(
+    () => ({
+      tasks,
+      addTask,
+      deleteTask,
+      editTask,
+      toggleTask,
+    }),
+    [tasks],
+  );
 
   return (
     <TasksContext.Provider value={value}>{children}</TasksContext.Provider>
