@@ -6,14 +6,53 @@ interface Task {
   completed: boolean;
 }
 
-type TasksContextValue = Task[];
+type TasksContextType = {
+  tasks: Task[];
+  addTask: () => void;
+  deleteTask: (id: string) => void;
+  editTask: (id: string, text: string) => void;
+  toggleTask: (id: string) => void;
+};
 
-const TasksContext = createContext<TasksContextValue | null>(null);
+const TasksContext = createContext<TasksContextType | null>(null);
 
 function TasksProvider({ children }: { children: React.ReactNode }) {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState<Task[]>([]);
 
-  const value = { tasks };
+  function addTask() {
+    setTasks((prev) => [
+      ...prev,
+      {
+        id: crypto.randomUUID(),
+        text: "",
+        completed: false,
+      },
+    ]);
+  }
+
+  function deleteTask(id: string) {
+    setTasks((prev) => prev.filter((task) => task.id !== id));
+  }
+  function editTask(id: string, text: string) {
+    setTasks((prev) =>
+      prev.map((task) => (task.id === id ? { ...task, text } : task)),
+    );
+  }
+  function toggleTask(id: string) {
+    setTasks((prev) =>
+      prev.map((task) =>
+        task.id === id ? { ...task, completed: !task.completed } : task,
+      ),
+    );
+  }
+
+  const value: TasksContextType = {
+    tasks,
+    addTask,
+    deleteTask,
+    editTask,
+    toggleTask,
+  };
 
   return (
     <TasksContext.Provider value={value}>{children}</TasksContext.Provider>
