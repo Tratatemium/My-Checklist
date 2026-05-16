@@ -1,28 +1,34 @@
 import { useState } from "react";
 
+import { useTasks } from "../../context/TasksContext/useTasks";
 import { Checkbox } from "../Checkbox/Checkbox";
 import { InputField } from "../InputField/InputField";
 import { Button } from "../Button/Button";
 
 import styles from "./ListItem.module.css";
 
-function ListItem() {
+function ListItem({ id }: { id: string }) {
   const [isEditing, setIsEditing] = useState(false);
-  const [value, setValue] = useState("");
   const [draft, setDraft] = useState("");
 
-  function startEdititing() {
-    setDraft(value);
+  const { findTask, deleteTask, editTask, toggleTask } = useTasks();
+
+  if (!findTask(id)) return null;
+
+  const getText = () => findTask(id)?.text || "";
+
+  function handleEdit() {
+    setDraft(getText());
     setIsEditing(true);
   }
 
   function handleSave() {
-    setValue(draft);
+    editTask(id, draft);
     setIsEditing(false);
   }
 
-  function cancelEditing() {
-    setDraft(value);
+  function handleCancel() {
+    setDraft(getText());
     setIsEditing(false);
   }
 
@@ -32,7 +38,7 @@ function ListItem() {
         <div className={styles.taskWrapper}>
           <Checkbox />
           {!isEditing ? (
-            <p>{value || "Untitled task"}</p>
+            <p>{getText() || "Untitled task"}</p>
           ) : (
             <InputField
               autoFocus
@@ -44,7 +50,7 @@ function ListItem() {
         <div className={styles.buttonsWrapper}>
           {!isEditing ? (
             <>
-              <Button variant="neutral" type="button" onClick={startEdititing}>
+              <Button variant="neutral" type="button" onClick={handleEdit}>
                 Edit
               </Button>
               <Button variant="subtle" type="button">
@@ -61,7 +67,7 @@ function ListItem() {
               >
                 Save
               </Button>
-              <Button variant="subtle" type="button" onClick={cancelEditing}>
+              <Button variant="subtle" type="button" onClick={handleCancel}>
                 Cancel
               </Button>
             </>

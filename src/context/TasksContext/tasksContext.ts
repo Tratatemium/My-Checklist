@@ -9,6 +9,7 @@ interface Task {
 type TasksContextType = {
   tasks: Task[];
   addTask: () => void;
+  findTask: (id: string) => Task | undefined;
   deleteTask: (id: string) => void;
   editTask: (id: string, text: string) => void;
   toggleTask: (id: string) => void;
