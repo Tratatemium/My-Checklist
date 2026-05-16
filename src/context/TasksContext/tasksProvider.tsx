@@ -34,10 +34,10 @@ function TasksProvider({ children }: { children: React.ReactNode }) {
     );
   }, []);
 
-  const toggleTask = useCallback((id: string) => {
+  const setCompleted = useCallback((id: string, completed: boolean) => {
     setTasks((prev) =>
       prev.map((task) =>
-        task.id === id ? { ...task, completed: !task.completed } : task,
+        task.id === id ? { ...task, completed: completed } : task,
       ),
     );
   }, []);
@@ -49,9 +49,9 @@ function TasksProvider({ children }: { children: React.ReactNode }) {
       findTask,
       deleteTask,
       editTask,
-      toggleTask,
+      setCompleted,
     }),
-    [tasks, addTask, findTask, deleteTask, editTask, toggleTask],
+    [tasks, addTask, findTask, deleteTask, editTask, setCompleted],
   );
 
   return (

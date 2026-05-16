@@ -12,7 +12,7 @@ type TasksContextType = {
   findTask: (id: string) => Task | undefined;
   deleteTask: (id: string) => void;
   editTask: (id: string, text: string) => void;
-  toggleTask: (id: string) => void;
+  setCompleted: (id: string, completed: boolean) => void;
 };
 
 const TasksContext = createContext<TasksContextType | null>(null);
