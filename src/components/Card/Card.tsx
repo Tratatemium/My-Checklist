@@ -9,7 +9,7 @@ function Card() {
   return (
     <ul className={styles.card}>
       {tasks.length === 0 ? (
-        <p>You have no tasks!</p>
+        <p>No tasks yet</p>
       ) : (
         tasks.map((task) => <ListItem key={task.id} id={task.id} />)
       )}
