@@ -11,11 +11,12 @@ function ListItem({ id }: { id: string }) {
   const [isEditing, setIsEditing] = useState(false);
   const [draft, setDraft] = useState("");
 
-  const { findTask, deleteTask, editTask, toggleTask } = useTasks();
+  const { findTask, deleteTask, editTask, setCompleted } = useTasks();
 
   if (!findTask(id)) return null;
 
   const getText = () => findTask(id)?.text || "";
+  const getChecked = () => findTask(id)?.completed || false;
 
   function handleEdit() {
     setDraft(getText());
@@ -32,11 +33,21 @@ function ListItem({ id }: { id: string }) {
     setIsEditing(false);
   }
 
+  function handleDelete() {
+    deleteTask(id);
+  }
+
+  function handleChange(
+    e: React.ChangeEvent<HTMLInputElement, HTMLInputElement>,
+  ) {
+    setCompleted(id, e.target.checked);
+  }
+
   return (
     <li>
       <form className={styles.form}>
         <div className={styles.taskWrapper}>
-          <Checkbox />
+          <Checkbox checked={getChecked()} onChange={handleChange} />
           {!isEditing ? (
             <p>{getText() || "Untitled task"}</p>
           ) : (
@@ -53,7 +64,7 @@ function ListItem({ id }: { id: string }) {
               <Button variant="neutral" type="button" onClick={handleEdit}>
                 Edit
               </Button>
-              <Button variant="subtle" type="button">
+              <Button variant="subtle" type="button" onClick={handleDelete}>
                 Delete
               </Button>
             </>
