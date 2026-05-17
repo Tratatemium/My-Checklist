@@ -16,16 +16,30 @@ const mockContext = {
   setCompleted: () => {},
 };
 
+const completedContext = {
+  tasks: [{ id: STORY_ID, text: "Buy groceries", completed: true }],
+  addTask: () => {},
+  findTask: (id: string) =>
+    id === STORY_ID
+      ? { id: STORY_ID, text: "Buy groceries", completed: true }
+      : undefined,
+  deleteTask: () => {},
+  editTask: () => {},
+  setCompleted: () => {},
+};
+
 const meta = {
   title: "components/ListItem",
   component: ListItem,
+  tags: ["autodocs"],
+  parameters: {
+    layout: "centered",
+  },
   decorators: [
     (Story) => (
-      <TasksContext.Provider value={mockContext}>
-        <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
-          <Story />
-        </ul>
-      </TasksContext.Provider>
+      <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
+        <Story />
+      </ul>
     ),
   ],
 } satisfies Meta<typeof ListItem>;
@@ -38,4 +52,24 @@ export const Default: Story = {
   args: {
     id: STORY_ID,
   },
+  decorators: [
+    (Story) => (
+      <TasksContext.Provider value={mockContext}>
+        <Story />
+      </TasksContext.Provider>
+    ),
+  ],
+};
+
+export const Completed: Story = {
+  args: {
+    id: STORY_ID,
+  },
+  decorators: [
+    (Story) => (
+      <TasksContext.Provider value={completedContext}>
+        <Story />
+      </TasksContext.Provider>
+    ),
+  ],
 };
