@@ -1,7 +1,7 @@
 import { Card } from "../Card/Card";
 import { Button } from "../../ui/Button/Button";
 import { useTasks } from "../../../context/TasksContext/useTasks";
-import { Title } from "../../ui/Title/Title";
+import { Title } from "../Title/Title";
 import { InfoIcon } from "../../icons/InfoIcon";
 
 import styles from "./Checklist.module.css";

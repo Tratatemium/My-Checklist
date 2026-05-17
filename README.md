@@ -30,9 +30,9 @@ npm install
 ```
 src/
 ├── components/
-│   ├── features/       # App-specific components (Card, Checklist, ListItem)
+│   ├── features/       # App-specific components (Card, Checklist, ListItem, Title)
 │   ├── icons/          # SVG icon components
-│   └── ui/             # Reusable UI primitives (Button, Checkbox, InputField, Title)
+│   └── ui/             # Reusable UI primitives (Button, Checkbox, InputField)
 ├── context/
 │   └── TasksContext/   # Global task state (Context API)
 └── styles/             # Global styles and CSS variables
