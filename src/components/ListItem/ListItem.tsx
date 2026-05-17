@@ -49,7 +49,7 @@ function ListItem({ id }: { id: string }) {
         <div className={styles.taskWrapper}>
           <Checkbox checked={getChecked()} onChange={handleChange} />
           {!isEditing ? (
-            <p>{getText() || "Untitled task"}</p>
+            <p className={styles.text}>{getText() || "Untitled task"}</p>
           ) : (
             <InputField
               autoFocus
