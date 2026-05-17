@@ -19,7 +19,7 @@ function Checklist() {
 
   return (
     <div className={styles.checklist}>
-      <div className={styles.header}>
+      <header className={styles.header}>
         <svg
           className={styles.icon}
           viewBox="0 0 30 30"
@@ -38,7 +38,7 @@ function Checklist() {
           <h2 className={styles.title}>My Checklist</h2>
           <p className={styles.info}>{getInfo()}</p>
         </div>
-      </div>
+      </header>
       {tasks.length > 0 && <Card />}
       <Button variant="default" onClick={addTask} className={styles.addButton}>
         Add task

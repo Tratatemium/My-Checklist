@@ -3,6 +3,8 @@
   flex-direction: column;
   width: 480px;
   max-width: 100%;
+  justify-content: left;
+  align-items: flex-start;
   padding: var(--spacing-lg);
   gap: var(--spacing-lg);
   border-radius: var(--spacing-sm);
@@ -13,7 +15,8 @@
 
 .header {
   display: flex;
-  align-items: center;
+  align-items: start;
+  text-align: left;
   gap: var(--spacing-md);
 }
 
@@ -43,4 +46,5 @@
 
 .addButton {
   align-self: stretch;
+  margin-left: calc(26px + var(--spacing-lg));
 }
