@@ -11,6 +11,11 @@
   border: var(--border-primary);
   background-color: var(--color-surface-primary);
   color: var(--color-foreground-primary);
+
+  @media (max-width: 480px) {
+    padding: var(--spacing-md);
+    gap: var(--spacing-md);
+  }
 }
 
 .header {
@@ -39,4 +44,8 @@
 .addButton {
   align-self: stretch;
   margin-left: calc(26px + var(--spacing-lg));
+
+  @media (max-width: 480px) {
+    margin-left: 0;
+  }
 }

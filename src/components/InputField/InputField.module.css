@@ -35,3 +35,17 @@
   outline-offset: var(--spacing-xxs);
   box-shadow: 0 0 0 2px var(--color-surface-input);
 }
+
+@media (max-width: 480px) {
+  .text {
+    min-width: 0;
+  }
+  .form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .buttonsWrapper {
+    justify-content: flex-end;
+  }
+}
