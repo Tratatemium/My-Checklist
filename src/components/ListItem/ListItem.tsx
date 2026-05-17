@@ -13,13 +13,13 @@ function ListItem({ id }: { id: string }) {
 
   const { findTask, deleteTask, editTask, setCompleted } = useTasks();
 
-  if (!findTask(id)) return null;
+  const task = findTask(id);
+  if (!task) return null;
 
-  const getText = () => findTask(id)?.text || "";
-  const getChecked = () => findTask(id)?.completed || false;
+  const { text, completed } = task;
 
   function handleEdit() {
-    setDraft(getText());
+    setDraft(text);
     setIsEditing(true);
   }
 
@@ -29,17 +29,11 @@ function ListItem({ id }: { id: string }) {
   }
 
   function handleCancel() {
-    setDraft(getText());
+    setDraft(text);
     setIsEditing(false);
   }
 
-  function handleDelete() {
-    deleteTask(id);
-  }
-
-  function handleChange(
-    e: React.ChangeEvent<HTMLInputElement, HTMLInputElement>,
-  ) {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     setCompleted(id, e.target.checked);
   }
 
@@ -52,9 +46,9 @@ function ListItem({ id }: { id: string }) {
     <li>
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.taskWrapper}>
-          <Checkbox checked={getChecked()} onChange={handleChange} />
+          <Checkbox checked={completed} onChange={handleChange} />
           {!isEditing ? (
-            <p className={styles.text}>{getText() || "Untitled task"}</p>
+            <p className={styles.text}>{text || "Untitled task"}</p>
           ) : (
             <InputField
               autoFocus
@@ -69,7 +63,7 @@ function ListItem({ id }: { id: string }) {
               <Button variant="neutral" type="button" onClick={handleEdit}>
                 Edit
               </Button>
-              <Button variant="subtle" type="button" onClick={handleDelete}>
+              <Button variant="subtle" type="button" onClick={() => deleteTask(id)}>
                 Delete
               </Button>
             </>

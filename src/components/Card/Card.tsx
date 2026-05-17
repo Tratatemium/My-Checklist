@@ -8,8 +8,9 @@ function Card() {
   const { tasks } = useTasks();
   return (
     <ul className={styles.card}>
-      {tasks.length !== 0 &&
-        tasks.map((task) => <ListItem key={task.id} id={task.id} />)}
+      {tasks.map((task) => (
+        <ListItem key={task.id} id={task.id} />
+      ))}
     </ul>
   );
 }
