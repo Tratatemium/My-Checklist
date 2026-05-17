@@ -1,0 +1,50 @@
+.checklist {
+  display: flex;
+  flex-direction: column;
+  width: 480px;
+  max-width: 100%;
+  justify-content: left;
+  align-items: flex-start;
+  padding: var(--spacing-lg);
+  gap: var(--spacing-lg);
+  border-radius: var(--spacing-sm);
+  border: var(--border-primary);
+  background-color: var(--color-surface-primary);
+  color: var(--color-foreground-primary);
+}
+
+.header {
+  display: flex;
+  align-items: start;
+  text-align: left;
+  gap: var(--spacing-md);
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.title {
+  margin: 0;
+  font-weight: 600;
+  font-size: var(--font-size-lg);
+  line-height: 120%;
+  letter-spacing: -2%;
+}
+
+.info {
+  line-height: 140%;
+  color: var(--color-foreground-tertiary);
+}
+
+.addButton {
+  align-self: stretch;
+  margin-left: calc(26px + var(--spacing-lg));
+}

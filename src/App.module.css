@@ -1,3 +1,8 @@
 .app {
-
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 72px var(--spacing-md) var(--spacing-lg);
+  min-height: 100%;
+  box-sizing: border-box;
 }

@@ -1,10 +1,12 @@
 :root {
   --color-foreground-primary: #000000;
   --color-foreground-secondary: #e3e3e3;
+  --color-foreground-tertiary: #757575;
   --color-foreground-accent: #5b4fcf;
   --color-foreground-subtle: #94a3b8;
 
-  --colot-surface-primary: #ffffff;
+  --color-surface-primary: #ffffff;
+  --color-surface-input: #f8f8f8;
   --color-surface-secondary: #2c2c2c;
   --color-surface-neutral: #e3e3e3;
   --color-surface-tertiary: #efe1e1;
@@ -26,9 +28,11 @@
 
   --font-size-sm: 14px;
   --font-size-md: 16px;
+  --font-size-lg: 24px;
 
   --spacing-xxs: 2px;
   --spacing-xs: 6px;
   --spacing-sm: 8px;
   --spacing-md: 16px;
+  --spacing-lg: 24px;
 }

@@ -1,8 +1,13 @@
 .card {
+  list-style: none;
+  margin: 0;
   display: flex;
   flex-direction: column;
   padding: var(--spacing-sm);
   gap: var(--spacing-sm);
-  border: var(--border-primary);
-  border-radius: var(--border-primary);
+}
+
+.card > li:not(:last-child) {
+  border-bottom: var(--border-subtle);
+  padding-bottom: var(--spacing-sm);
 }
