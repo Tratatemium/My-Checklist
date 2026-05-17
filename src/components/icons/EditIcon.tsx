@@ -7,6 +7,7 @@ function EditIcon(props: SVGProps<SVGSVGElement>) {
       width="1em"
       height="1em"
       viewBox="0 0 24 24"
+      aria-hidden="true"
       {...props}
     >
       {/* Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE */}

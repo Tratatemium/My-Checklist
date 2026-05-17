@@ -30,11 +30,13 @@ function Title() {
           variant="title"
           value={value}
           onChange={(e) => setValue(e.target.value)}
+          aria-label="Checklist title"
         />
       )}
       <Button
         variant="subtle"
         type="button"
+        aria-label={isEditing ? "Save title" : "Edit title"}
         onClick={() => {
           if (isEditing) localStorage.setItem(TITLE_STORAGE_KEY, value);
           setIsEditing((prev) => !prev);

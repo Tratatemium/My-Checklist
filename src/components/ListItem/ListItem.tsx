@@ -46,7 +46,11 @@ function ListItem({ id }: { id: string }) {
     <li>
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.taskWrapper}>
-          <Checkbox checked={completed} onChange={handleChange} />
+          <Checkbox
+            checked={completed}
+            onChange={handleChange}
+            aria-label={text || "Untitled task"}
+          />
           {!isEditing ? (
             <p className={styles.text}>{text || "Untitled task"}</p>
           ) : (
@@ -54,16 +58,17 @@ function ListItem({ id }: { id: string }) {
               autoFocus
               value={draft}
               onChange={(e) => setDraft(e.target.value)}
+              aria-label="Edit task"
             />
           )}
         </div>
         <div className={styles.buttonsWrapper}>
           {!isEditing ? (
             <>
-              <Button variant="neutral" type="button" onClick={handleEdit}>
+              <Button variant="neutral" type="button" onClick={handleEdit} aria-label={`Edit: ${text || "Untitled task"}`}>
                 Edit
               </Button>
-              <Button variant="subtle" type="button" onClick={() => deleteTask(id)}>
+              <Button variant="subtle" type="button" onClick={() => deleteTask(id)} aria-label={`Delete: ${text || "Untitled task"}`}>
                 Delete
               </Button>
             </>

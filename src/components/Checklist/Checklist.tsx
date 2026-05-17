@@ -22,7 +22,7 @@ function Checklist() {
         <InfoIcon className={styles.icon} />
         <div className={styles.headerText}>
           <Title />
-          <p className={styles.info}>{getInfo()}</p>
+          <p className={styles.info} aria-live="polite" aria-atomic="true">{getInfo()}</p>
         </div>
       </header>
       {tasks.length > 0 && <Card />}
