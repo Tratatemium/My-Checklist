@@ -8,12 +8,12 @@ import { Button } from "../../ui/Button/Button";
 import styles from "./ListItem.module.css";
 
 function ListItem({ id }: { id: string }) {
-  const [isEditing, setIsEditing] = useState(false);
-  const [draft, setDraft] = useState("");
-
   const { findTask, deleteTask, editTask, setCompleted } = useTasks();
 
   const task = findTask(id);
+  const [isEditing, setIsEditing] = useState(() => !task?.text);
+  const [draft, setDraft] = useState("");
+
   if (!task) return null;
 
   const { text, completed } = task;
@@ -65,10 +65,20 @@ function ListItem({ id }: { id: string }) {
         <div className={styles.buttonsWrapper}>
           {!isEditing ? (
             <>
-              <Button variant="neutral" type="button" onClick={handleEdit} aria-label={`Edit: ${text || "Untitled task"}`}>
+              <Button
+                variant="neutral"
+                type="button"
+                onClick={handleEdit}
+                aria-label={`Edit: ${text || "Untitled task"}`}
+              >
                 Edit
               </Button>
-              <Button variant="subtle" type="button" onClick={() => deleteTask(id)} aria-label={`Delete: ${text || "Untitled task"}`}>
+              <Button
+                variant="subtle"
+                type="button"
+                onClick={() => deleteTask(id)}
+                aria-label={`Delete: ${text || "Untitled task"}`}
+              >
                 Delete
               </Button>
             </>
