@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { Button } from "../Button/Button";
-import { EditIcon } from "../icons/EditIcon";
+import { EditIcon } from "../../icons/EditIcon";
 import { InputField } from "../InputField/InputField";
 
 import styles from "./Title.module.css";

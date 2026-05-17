@@ -1,7 +1,7 @@
 import styles from "./App.module.css";
 
 import { TasksProvider } from "./context/TasksContext/tasksProvider";
-import { Checklist } from "./components/Checklist/Checklist";
+import { Checklist } from "./components/features/Checklist/Checklist";
 function App() {
   return (
     <TasksProvider>

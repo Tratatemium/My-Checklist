@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Card } from "./Card";
-import { TasksProvider } from "../../context/TasksContext/tasksProvider";
+import { TasksProvider } from "../../../context/TasksContext/tasksProvider";
 
 const meta = {
   title: "components/Card",

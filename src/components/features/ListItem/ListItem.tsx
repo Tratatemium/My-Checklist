@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-import { useTasks } from "../../context/TasksContext/useTasks";
-import { Checkbox } from "../Checkbox/Checkbox";
-import { InputField } from "../InputField/InputField";
-import { Button } from "../Button/Button";
+import { useTasks } from "../../../context/TasksContext/useTasks";
+import { Checkbox } from "../../ui/Checkbox/Checkbox";
+import { InputField } from "../../ui/InputField/InputField";
+import { Button } from "../../ui/Button/Button";
 
 import styles from "./ListItem.module.css";
 

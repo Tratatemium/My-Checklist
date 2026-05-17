@@ -1,6 +1,6 @@
 import { ListItem } from "../ListItem/ListItem";
 
-import { useTasks } from "../../context/TasksContext/useTasks";
+import { useTasks } from "../../../context/TasksContext/useTasks";
 
 import styles from "./Card.module.css";
 

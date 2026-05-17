@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { ListItem } from "./ListItem";
-import { TasksContext } from "../../context/TasksContext/tasksContext";
+import { TasksContext } from "../../../context/TasksContext/tasksContext";
 
 const STORY_ID = "story-task-1";
 
