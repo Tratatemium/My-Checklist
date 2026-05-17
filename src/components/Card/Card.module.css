@@ -1,8 +1,7 @@
 .card {
+  list-style: none;
   display: flex;
   flex-direction: column;
   padding: var(--spacing-sm);
   gap: var(--spacing-sm);
-  border: var(--border-primary);
-  border-radius: var(--border-primary);
 }
