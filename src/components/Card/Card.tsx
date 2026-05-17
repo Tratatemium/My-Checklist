@@ -7,9 +7,10 @@ import styles from "./Card.module.css";
 function Card() {
   const { tasks } = useTasks();
   return (
-    <ul className={styles.card}>
-      {tasks.length !== 0 &&
-        tasks.map((task) => <ListItem key={task.id} id={task.id} />)}
+    <ul className={styles.card} aria-label="Tasks">
+      {tasks.map((task) => (
+        <ListItem key={task.id} id={task.id} />
+      ))}
     </ul>
   );
 }

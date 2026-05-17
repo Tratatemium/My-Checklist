@@ -46,7 +46,7 @@ function TasksProvider({ children }: { children: React.ReactNode }) {
   const setCompleted = useCallback((id: string, completed: boolean) => {
     setTasks((prev) =>
       prev.map((task) =>
-        task.id === id ? { ...task, completed: completed } : task,
+        task.id === id ? { ...task, completed } : task,
       ),
     );
   }, []);
