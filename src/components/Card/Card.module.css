@@ -5,3 +5,8 @@
   padding: var(--spacing-sm);
   gap: var(--spacing-sm);
 }
+
+.card > li:not(:last-child) {
+  border-bottom: var(--border-subtle);
+  padding-bottom: var(--spacing-sm);
+}
