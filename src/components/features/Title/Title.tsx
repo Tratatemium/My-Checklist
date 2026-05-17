@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import { Button } from "../Button/Button";
-import { EditIcon } from "../icons/EditIcon";
-import { InputField } from "../InputField/InputField";
+import { Button } from "../../ui/Button/Button";
+import { EditIcon } from "../../icons/EditIcon";
+import { InputField } from "../../ui/InputField/InputField";
 
 import styles from "./Title.module.css";
 

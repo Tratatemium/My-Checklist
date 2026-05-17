@@ -1,8 +1,8 @@
 import { Card } from "../Card/Card";
-import { Button } from "../Button/Button";
-import { InfoIcon } from "../icons/InfoIcon";
-import { useTasks } from "../../context/TasksContext/useTasks";
+import { Button } from "../../ui/Button/Button";
+import { useTasks } from "../../../context/TasksContext/useTasks";
 import { Title } from "../Title/Title";
+import { InfoIcon } from "../../icons/InfoIcon";
 
 import styles from "./Checklist.module.css";
 
@@ -22,7 +22,9 @@ function Checklist() {
         <InfoIcon className={styles.icon} />
         <div className={styles.headerText}>
           <Title />
-          <p className={styles.info} aria-live="polite" aria-atomic="true">{getInfo()}</p>
+          <p className={styles.info} aria-live="polite" aria-atomic="true">
+            {getInfo()}
+          </p>
         </div>
       </header>
       {tasks.length > 0 && <Card />}
