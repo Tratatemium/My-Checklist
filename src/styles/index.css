@@ -3,7 +3,7 @@
   letter-spacing: 0.18px;
 
   color: var(--color-foreground-primary);
-  background: var(--color-surface-primary);
+  background: var(--color-surface-tertiary);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

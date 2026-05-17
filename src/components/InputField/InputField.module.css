@@ -3,7 +3,7 @@
   min-width: 126px;
   padding: var(--spacing-sm);
   padding-right: 0;
-  background: var(--colot-surface-input);
+  background: var(--color-surface-input);
   border-radius: var(--spacing-xs);
   border: var(--border-subtle);
   font-size: var(--font-size-sm);
@@ -18,5 +18,5 @@
 .input:focus {
   outline: var(--border-focus);
   outline-offset: var(--spacing-xxs);
-  box-shadow: 0 0 0 2px var(--colot-surface-input);
+  box-shadow: 0 0 0 2px var(--color-surface-input);
 }

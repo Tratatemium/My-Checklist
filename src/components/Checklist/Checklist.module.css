@@ -1,14 +1,20 @@
 .checklist {
   display: flex;
-  flex-direction: row;
-  min-width: 480px;
-  width: fit-content;
+  flex-direction: column;
+  width: 480px;
+  max-width: 100%;
   padding: var(--spacing-lg);
   gap: var(--spacing-lg);
   border-radius: var(--spacing-sm);
   border: var(--border-primary);
-  background-color: var(--colot-surface-primary);
+  background-color: var(--color-surface-primary);
   color: var(--color-foreground-primary);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
 }
 
 .icon {
@@ -16,7 +22,7 @@
   height: 32px;
 }
 
-.wrapper {
+.headerText {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);
@@ -33,4 +39,8 @@
 .info {
   line-height: 140%;
   color: var(--color-foreground-tertiary);
+}
+
+.addButton {
+  align-self: stretch;
 }

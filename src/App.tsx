@@ -1,14 +1,12 @@
 import styles from "./App.module.css";
 
 import { TasksProvider } from "./context/TasksContext/tasksProvider";
-import { Button } from "./components/Button/Button";
+import { Checklist } from "./components/Checklist/Checklist";
 function App() {
   return (
     <TasksProvider>
       <div className={styles.app}>
-        <Button variant="neutral">Edit</Button>
-        <Button variant="default">Add task</Button>
-        <Button variant="subtle">Delete</Button>
+        <Checklist />
       </div>
     </TasksProvider>
   );

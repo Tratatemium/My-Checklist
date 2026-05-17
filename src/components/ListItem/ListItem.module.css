@@ -1,11 +1,12 @@
 .form {
   display: flex;
   flex-direction: row;
-  width: 360px;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
   padding: var(--spacing-xs);
   gap: var(--spacing-sm);
+  box-sizing: border-box;
 }
 
 .taskWrapper,
