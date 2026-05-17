@@ -5,13 +5,35 @@
   background: var(--color-surface-subtle);
   border-radius: var(--spacing-xxs);
   border: var(--border-secondary);
+  cursor: pointer;
+  color: var(--color-surface-primary);
 }
 
 .input:checked {
   border-color: transparent;
-  background: var(--color-surface-accent)
-    url("data:image/svg+xml,%3Csvg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 9.4L0 5.4L1.4 4L4 6.6L10.6 0L12 1.4L4 9.4Z' fill='white'/%3E%3C/svg%3E")
-    center / 12px 10px no-repeat;
+  background-color: var(--color-surface-accent);
+}
+
+.check {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  color: var(--color-surface-primary);
+}
+
+.input:checked ~ .check {
+  opacity: 1;
+}
+
+.input:disabled {
+  background-color: var(--color-surface-neutral);
+  border-color: var(--color-surface-disabled);
+  color: var(--color-foreground-subtle);
+  cursor: not-allowed;
+}
+
+.input:disabled ~ .check {
+  color: var(--color-foreground-tertiary);
 }
 
 .wrapper {

@@ -10,6 +10,7 @@
   --color-surface-secondary: #2c2c2c;
   --color-surface-neutral: #e3e3e3;
   --color-surface-tertiary: #efe1e1;
+  --color-surface-disabled: #94a3b8;
   --color-surface-focus: color-mix(in srgb, #625b71 20%, transparent);
   --color-surface-accent: #5b4fcf;
   --color-surface-subtle: transparent;

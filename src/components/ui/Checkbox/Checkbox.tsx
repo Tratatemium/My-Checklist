@@ -1,3 +1,4 @@
+import { CheckIcon } from "../../icons/CheckIcon";
 import styles from "./Checkbox.module.css";
 
 function Checkbox({
@@ -12,6 +13,7 @@ function Checkbox({
         type={type}
         {...props}
       />
+      <CheckIcon className={styles.check} />
     </span>
   );
 }
