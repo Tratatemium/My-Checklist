@@ -6,13 +6,17 @@ import { InputField } from "../InputField/InputField";
 
 import styles from "./Title.module.css";
 
+const TITLE_STORAGE_KEY = "checklist-title";
+
 function Title() {
   const [isEditing, setIsEditing] = useState(false);
-  const initialValue = "My Checklist";
-  const [value, setValue] = useState(initialValue);
+  const [value, setValue] = useState(
+    () => localStorage.getItem(TITLE_STORAGE_KEY) ?? "My Checklist",
+  );
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    localStorage.setItem(TITLE_STORAGE_KEY, value);
     setIsEditing(false);
   }
 
@@ -31,7 +35,10 @@ function Title() {
       <Button
         variant="subtle"
         type="button"
-        onClick={() => setIsEditing((prev) => !prev)}
+        onClick={() => {
+          if (isEditing) localStorage.setItem(TITLE_STORAGE_KEY, value);
+          setIsEditing((prev) => !prev);
+        }}
       >
         <EditIcon />
       </Button>
